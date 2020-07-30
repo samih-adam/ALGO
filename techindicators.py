@@ -1,5 +1,8 @@
 from alpha_vantage.techindicators import av
 
+# input key
+key = 'XXX'
+
 
 class TechIndicators(av):
     def __init__(self, *args, **kwargs):
@@ -9,7 +12,7 @@ class TechIndicators(av):
             raise ValueError("Output Format {} is not compatible with the TechIndicators class".format(
                 self.output_format.lower()))
 
-    def get_sma(self, symbol, interval='daily', time_period=20, series_type='close'):
+    def get_sma(self, symbol, interval='daily', time_period=20, series_type='close', __function_key='XXX'):
         """ return simple moving average time series in two json objects as data and meta_data. It raises ValueError
         when problems arise
 
@@ -20,4 +23,4 @@ class TechIndicators(av):
             series_type: high
             """
         __FUNCTION_KEY__ = "SMA"
-        return __FUNCTION_KEY__, 'Technical Analysis: SMA', 'Meta Data'
+        return __function_key, 'Technical Analysis: SMA', 'Meta Data'
